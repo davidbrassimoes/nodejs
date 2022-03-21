@@ -1,0 +1,8 @@
+app de notas command line
+abrir, pergunta ao utilizador se quer adicionar, apagar ou consultar notas
+
+list
+read
+create
+delete
+exit
