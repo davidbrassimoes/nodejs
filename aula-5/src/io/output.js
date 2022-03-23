@@ -1,10 +1,10 @@
-const { exec } = require('child_process')
 const { userInput } = require('./input')
 
 const options = [
     '(L)ist',
     '(R)ead',
     '(C)reate',
+    '(U)pdate',
     '(D)elete',
     '(E)xit'
 ]
@@ -31,5 +31,5 @@ const menu = async () => {
     return option
 }
 
-const clear = () => exec('cls')
+const clear = () => console.clear()
 module.exports = { output, line, title, menu, clear }

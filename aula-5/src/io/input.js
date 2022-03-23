@@ -1,10 +1,13 @@
 const { createInterface } = require('readline')
 
-const userInput = async (message) => {
+const userInput = async (message, defaultText = null) => {
     const rl = createInterface({
         input: process.stdin,
         output: process.stdout
     })
+    if (defaultText) {
+        rl.write(defaultText)
+    }
     return new Promise((resolve) => {
         rl.question(message, answer => {
             resolve(answer)
