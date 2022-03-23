@@ -1,0 +1,49 @@
+client - rede computadores - server
+
+tcp/ip
+
+transmission control protocol
+internet protocol
+
+um ip sao 4 conjuntos de 8 bits separados por . (0-255)
+
+http request - dentro temos verbos http (post(criar), get(obter), delete(apagar), put(atualizar), patch(atualizar mas nao tudo), *trace, *connect)
+
+http:80
+https:443
+por defeito
+
+http response - é sempre texto - se o pedido era pelo index.html vem mesmo o <html> etc..
+
+codigo das respostas - 0-500
+
+gama 100 - informacao
+gama 200 - ok
+gama 300 - redirecionamentos
+gama 400 - erros de pedido
+gama 500 - erros de infrastrutura
+
+200 ok
+201 created
+204 no content
+301 permanent redirect 
+400 bad request
+401 unauthorized 
+403 forbidden
+404 not found
+405 method not allowed
+418 i'm a teapot...
+500 internal server error
+
+http/1.1 200 ok - http/versao codigo mensagem
+
+webserver corre dentro do servidor - apache httpd, nginx, iis (software que espera pedidos e devolve respostas http)
+
+webserver comunica com o application server - vai a db e volta para cima 
+
+app server - node php .net java python ruby
+db - mysql oracle sqlite
+
+app server manda tipicamente sql para a db que devolve um (response set??)
+
+bit.ly/mg.nodejs-2022
