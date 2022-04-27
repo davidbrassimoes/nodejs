@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+</head>
+<body>
+    <h1>Contacts</h1>
+    <h4>Hello, {{contacts.0.name}} </h4>
+
+    
+    <ul class="contacts_list">
+  {{#each contacts}}
+    <li>{{this.name}} - {{this.tel}} </li>
+  {{/each}}
+
+  <form action="/save" method="post">
+        <input type="text" name="name">
+        <input type="text" name="tel">
+        <button type="submit">Save</button>
+    </form>
+
+</ul>
+
+</body>
+</html>
