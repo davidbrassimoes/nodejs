@@ -1,1 +1,32 @@
-{"name":"carlkos","tel":"321321"}
+{
+    "contacts": [
+        {
+            "name": "carlos",
+            "tel": "123132"
+        },
+        {
+            "name": "ana",
+            "tel": "123132"
+        },
+        {
+            "name": "pedro",
+            "tel": "123132"
+        },
+        {
+            "name": "maria",
+            "tel": "123132"
+        },
+        {
+            "name": "paula",
+            "tel": "123132"
+        },
+        {
+            "name": "filipe",
+            "tel": "123132"
+        },
+        {
+            "name": "julio",
+            "tel": "12112313"
+        }
+    ]
+}

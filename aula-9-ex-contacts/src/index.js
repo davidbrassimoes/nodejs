@@ -9,26 +9,24 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-console.log('testjs')
-
-app.get('/', (req,res)=>{
-    res.render('index', contacts)
-})
-
-app.get('/contacts', (req,res)=>{
-    res.json(contacts)
-})
-
 
 const data = fs.readFileSync('./data/data.json');
-const myObject= JSON.parse(data);
+const myObject = JSON.parse(data);
+console.log(contacts)
+
+app.get('/', (req, res) => {
+    res.render('index', myObject.contacts)
+})
+
+app.get('/contacts', (req, res) => {
+    res.json(myObject)
+})
 
 
 
-
-app.post('/save', (req,res)=>{
-    console.log(req.body)
-    console.log(myObject)
+app.post('/save', (req, res) => {
+    // console.log(req.body)
+    // console.log(myObject)
 
     //  const {name, tel} = 
     //  myObject.push({
@@ -36,17 +34,27 @@ app.post('/save', (req,res)=>{
     //      name, 
     //      tel
     //  })
-     
-     const newData = JSON.stringify(req.body);
-     console.log('newData',newData);
-     fs.writeFile('./data/data.json', newData, err => {
-         if(err) throw err;
-         console.log("New data added"); 
-        });   
+
+    const newData = JSON.stringify(req.body);
+    console.log('newData', newData);
+
+    fs.readFile('./data/data.json', (err, oldData) => {
+        const oldSlicedData = oldData.toString().slice(oldData.toString().indexOf('[') + 1, oldData.toString().lastIndexOf(']'))
+        console.log('old', oldSlicedData)
+
+        fs.writeFile('./data/data.json',
+            `{"contacts":  [${oldSlicedData}, ${newData}]}`,
+            err => {
+                if (err) throw err;
+                console.log("New data added");
+            });
         res.redirect('/save')
+    })
 })
 
-app.get('/save', (req,res)=>{
+
+
+app.get('/save', (req, res) => {
     res.send('contact saved')
 })
 
